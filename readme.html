@@ -1,0 +1,42 @@
+<html><pre>
+This is the README file for running simulations associated with:
+
+Newton, A.J.H, McDougal, R.A., Hines, M.L. and Lytton, W.W., 2018. Using NEURON
+for reaction-diffusion modeling of extracellular dynamics. Frontiers in
+neuroinformatics, 12.
+
+This code was contributed by AJH Newton and questions should be addressed to
+adam.newton"at"yale.edu
+
+There are two examples included here, the trivial example used for validations
+(figure 4) and the spreading depression simulation (figures 1 and 2).
+
+Run trivial.py, it will display the plot shown in figure 4 (with dx = 1) and
+create a 'trivial_1.00.npy' file with the results. To get the other relative
+errors shown in 4C modify the dx parameter (line 19).
+
+
+spreading_depression.py accepts command line arguments to switch between the 4
+different model combinations. To run it first compile the NEURON mod files. An
+error in the original model where multiple dendrite segments were used has been
+ corrected leading to quantitatively but not qualitatively different results
+from those report in the paper. 
+
+usage: spreading_depression.py [-h] [--edema] [--buffer] [--tstop [TSTOP]] dir
+
+Run the spreading depression simulation
+
+positional arguments:
+  dir              a directory to save the figures and data
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --edema          Use inhomogeneous tortuosity and volume fraction to
+                   simulate edema
+  --buffer         Use a reaction to model astrocytic buffering
+  --tstop [TSTOP]  duration of the simulation in ms (defaults to 200ms)
+
+The spreading depression simulations are computationally demanding, a demo
+version with fewer larger neurons and larger extracellular voxels is included
+spreading_depression_demo.py
+</pre></html>
